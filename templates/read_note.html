@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Read Note Details
+{% endblock %}
+
+
+{% block content %}
+    <!-- Створення таблиці з деталями нотатки. -->
+    <div class="container">
+        <h1 class="mt-5">Note Details {{ note_details.id }}</h1>
+
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Heading</th>
+                    <th>Text</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>{{note_details.id }}</td>
+                    <td>{{note_details.heading }}</td>
+                    <td>{{note_details.text }}</td>
+                    <td>{{note_details.date }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="/" class="btn btn-primary mt-3">Back</a>
+        <a href="/update_note/{{ note_details.id }}" class="btn btn-primary mt-3">Edit</a>
+        <a href="/delete_note/{{ note_details.id }}" class="btn btn-primary mt-3">Delete</a>
+    </div>
+{% endblock %}

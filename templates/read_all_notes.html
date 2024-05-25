@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    All Notes
+{% endblock %}
+
+
+{% block content %}
+    <!-- Створення невпорядкованого списку із всіма назвами нотаток як посилання. -->
+    <div class="container">
+        <h1 class="mt-5">All Notes</h1>
+
+        <ul>
+            {% for note in notes %}
+                <li><a href="/read_note/{{ note.id }}" class="btn btn-info btn-sm">{{ note.heading }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
